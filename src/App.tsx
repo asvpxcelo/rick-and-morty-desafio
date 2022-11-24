@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import Navbar from './components/views/Navbar';
+import api from './components/services/api';
+import Cards from './components/views/Cards';
 
-function App() {
+export const App = () => {
+  const [pages, setPages] = useState([1]);
+  
+  useEffect(() => {
+    api.get(`?page=${pages}`).then(({data}) => {
+      setPages(data?.results);
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log(pages);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Cards characters={pages}/>
     </div>
   );
 }

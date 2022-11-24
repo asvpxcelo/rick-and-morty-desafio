@@ -1,0 +1,28 @@
+body {
+    background-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #fff;
+    color: #000;
+}
+
+.navbar__links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar__links li {
+    letter-spacing: 3px;
+    margin: 3rem;
+}
+
