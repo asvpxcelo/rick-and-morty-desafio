@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Navbar from './components/views/navbar-component/NavbarComponent';
+import NavbarComponent from './components/views/navbar-component/NavbarComponent';
 import api from './components/services/api';
 import CharactersComponent from './components/views/cards-component/CharactersComponent';
+import PaginationComponent from './components/views/pagionation-component/PaginationComponent';
 
 export const App = () => {
   const [pages, setPages]: any = useState<any[]>([])
-  console.log(pages, 'pages')
   
   useEffect(() => {
     api.get(`?page=${pages}`).then(({data}) => {
@@ -15,8 +15,14 @@ export const App = () => {
   }, []);
   return (
     <div className="bg-dark text-white">
-      <Navbar />
+      <NavbarComponent />
+      <div className='next__page'>
+        <PaginationComponent  setPages= {pages}/>
+      </div>
+      <div className='characters__page'>
       <CharactersComponent characters={pages}/>
+      </div>
+      
     </div>
   );
 }
