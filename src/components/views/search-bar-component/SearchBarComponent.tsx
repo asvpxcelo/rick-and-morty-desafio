@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 const SearchBarComponent = () => {
-
     const [search, setSearch] = useState('');
 
     useEffect(() => {
@@ -10,10 +9,8 @@ const SearchBarComponent = () => {
 
     return (
         <form>
-            <input
-            type="text"
-            placeholder="Search a Guys.."
-            />
+            <input type="text" placeholder="Search a Guys.."/>
+            <button className='button__search'>Search</button>
         </form>
     );
 }

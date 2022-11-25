@@ -2,22 +2,21 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/views/navbar-component/NavbarComponent';
 import api from './components/services/api';
-import Cards from './components/views/cards-component/Cards';
+import CharactersComponent from './components/views/cards-component/CharactersComponent';
 
 export const App = () => {
   const [pages, setPages]: any = useState<any[]>([])
+  console.log(pages, 'pages')
   
   useEffect(() => {
     api.get(`?page=${pages}`).then(({data}) => {
       setPages(data?.results);
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(pages);
   return (
-    <div className="App">
+    <div className="bg-dark text-white">
       <Navbar />
-      <Cards characters={pages}/>
+      <CharactersComponent characters={pages}/>
     </div>
   );
 }
