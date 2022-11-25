@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Navbar from './components/views/Navbar';
+import Navbar from './components/views/navbar-component/NavbarComponent';
 import api from './components/services/api';
-import Cards from './components/views/Cards';
+import Cards from './components/views/cards-component/Cards';
 
 export const App = () => {
-  const [pages, setPages] = useState([1]);
+  const [pages, setPages]: any = useState<any[]>([])
   
   useEffect(() => {
     api.get(`?page=${pages}`).then(({data}) => {
