@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Caracter } from "../../interfaces/Caracters";
 import "./Characters.css";
 
-const CharactersComponent = ( props: { characters: Array<Caracter> } ) => {
+const CharactersComponent = (props: { characters: Array<Caracter> } ) => {
   return (
     <div className="container">
       <div className="characters__row">
