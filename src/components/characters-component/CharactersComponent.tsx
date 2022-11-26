@@ -5,10 +5,10 @@ import "./Characters.css";
 const CharactersComponent = (props: { characters: Array<Caracter> } ) => {
   return (
     <div className="container">
-      <div className="characters__row">
+      <div className="characters__column">
         {props?.characters.map((item, index) => {
           return (
-            <div key={index} className="characters__col">
+            <div key={index} className="characters__images__info">
               <img src={item?.image} alt="" className="characters__image" />
               <div className="characters__info">
                 <h5 className="">Name: {item?.name}</h5>
