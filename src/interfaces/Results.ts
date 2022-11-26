@@ -1,6 +1,10 @@
+import { Caracter } from "./Caracters"
 export interface Results {
-  count: number;
-  next: string | null;
-  pages: number;
-  prev: string | null;
+  info: {
+    count: number,
+    pages: number,
+    next: string,
+    prev: number | undefined
+  }
+  results: Array<Caracter>
 }
