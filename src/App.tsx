@@ -31,10 +31,10 @@ export const App = () => {
     <div className="bg-dark text-white">
       <NavbarComponent />
       <div className='next__page'>
-        <SearchBarComponent
+        {/* <SearchBarComponent
           setPagination={setPagination}
           setSearch={setSearch}
-        />
+        /> */}
         <PaginationComponent
          pagination={pagination}
           setPagination={setPagination}
