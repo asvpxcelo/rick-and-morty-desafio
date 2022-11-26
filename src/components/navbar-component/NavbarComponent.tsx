@@ -8,7 +8,6 @@ const NavbarComponent = () => {
       <div className="navbar__list">
         <h1>Rick And Morty API</h1>
         <div className="navbar__links">
-        <SearchBarComponent />
           <li>
             <a href="#"></a>Episodes
           </li>

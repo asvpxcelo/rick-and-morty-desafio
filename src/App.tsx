@@ -9,38 +9,32 @@ import PaginationComponent from './components/pagination-component/PaginationCom
 
 // Interfaces
 import { Caracter } from './interfaces/Caracters';
-interface IGetResult {
-  info: {
-    count: number,
-    pages: number,
-    next: string,
-    prev: number | undefined
-  }
-  results: Array<Caracter>
-}
+import { Results } from './interfaces/Results';
+import SearchBarComponent from './components/search-bar-component/SearchBarComponent';
 
 export const App = () => {
   const [pagination, setPagination] = useState<number>(1);
   const [caracters, setCaracters] = useState<Array<Caracter>>([]);
   const [isNextPage, setIsNextPage] = useState(false);
+  const [search, setSearch] = useState('')
   
   useEffect(() => {
-    api.get <IGetResult>(`?page=${pagination}`).then(({data}) => {
+    api.get <Results>(`?page=${pagination}&name=${search}`).then(({data}) => {
       setCaracters(data?.results);
 
-      /**
-       * Trata o retorno das páginas,
-       * caso a page seja maior que a paginação irá esconder o button
-       */
+      // Trata o retorno das páginas caso a page seja maior que a paginação irá esconder o button
       setIsNextPage(data?.info?.pages > pagination)
     });
-  }, [pagination]);
-
+  }, [pagination, search]);
 
   return (
     <div className="bg-dark text-white">
       <NavbarComponent />
       <div className='next__page'>
+        <SearchBarComponent
+          setPagination={setPagination}
+          setSearch={setSearch}
+        />
         <PaginationComponent
          pagination={pagination}
           setPagination={setPagination}
