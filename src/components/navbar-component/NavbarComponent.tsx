@@ -2,7 +2,6 @@ import React from "react";
 import "./Navbar.css";
 import SearchBarComponent from "../search-bar-component/SearchBarComponent";
 
-
 const NavbarComponent = () => {
   return (
     <header>

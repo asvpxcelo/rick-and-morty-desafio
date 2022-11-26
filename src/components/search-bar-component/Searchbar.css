@@ -3,15 +3,16 @@
 }
 
 input {
-    background-color: #000;
-    color: #fff;
+    background-color: #FFF6BF;
+    color: #3B185F;
     border: none;
     padding: 12px;
     margin: 5px;
+    border-radius: 25%;
 }
 
 input:hover {
-    background-color: #fff;
+    background-color: #FBFACD;
     color: #000;
 }
 
@@ -19,6 +20,7 @@ input:hover {
     margin: 5px;
     padding: 12px;
     border: none;
+    border-radius: 50%;
     background-color: #000;
     color: #fff;
 }

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { ICaracter } from "../../interfaces/Caracters";
 import "./Characters.css";
 
-const CharactersComponent = ({ characters }: any) => {
-  console.log(characters, "characters");
+const CharactersComponent = ( props: { characters: Array<ICaracter> } ) => {
   return (
     <div className="container">
       <div className="characters__row">
-        {characters.map((item, index) => {
+        {props.characters.map((item, index) => {
           return (
             <div key={index} className="characters__col">
               <img src={item?.image} alt="" className="characters__image" />
