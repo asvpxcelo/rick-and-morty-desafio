@@ -1,20 +1,26 @@
-import React from "react";
-import { ICaracter } from "../../interfaces/Caracters";
+import React, { FC } from "react";
 import "./Pagination.css";
 
-const PaginationComponent = ({name, age}: Array<IGetResult["info"]>) => {
-  const nextPage = () => {
-    console.log('alo')
+interface PaginationComponentProps  {
+  pagination: number,
+  setPagination: ((number) => void),
+  isNextPage: boolean
+}
+
+const PaginationComponent: FC<PaginationComponentProps> = ({pagination, setPagination, isNextPage}) => {
+  
+  const goToNextPage = () => {
+    setPagination(pagination + 1);
   }
 
-  const previousPage = () => {
-    
+  const goToPreviusPage = () => {
+    setPagination(pagination - 1);
   }
-  
+
   return (
     <div className="container">
-      <button className="button__next" onClick={nextPage}>Next</button>
-      <button className="button_previous" onClick={previousPage}>Previous</button>
+      { pagination !== 1 && <button className="" onClick={goToPreviusPage}> Previous Page</button> }
+      { isNextPage && <button className="" onClick={goToNextPage}>Next Page</button> }
     </div>
   )
 };
