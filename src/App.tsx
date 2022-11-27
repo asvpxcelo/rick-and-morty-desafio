@@ -9,10 +9,11 @@ import NavbarComponent from './components/navbar-component/NavbarComponent';
 import CharactersComponent from './components/characters-component/CharactersComponent';
 import PaginationComponent from './components/pagination-component/PaginationComponent';
 import SearchBarComponent from './components/search-bar-component/SearchBarComponent';
+import FiltersComponent from './components/filters-component/FiltersComponent';
 // Interfaces
 import { Caracter } from './interfaces/Caracters';
 import { Results } from './interfaces/Results';
-import FiltersComponent from './components/filters-component/FiltersComponent';
+
 
 export const App = () => {
   const [pagination, setPagination] = useState<number>(1);
@@ -34,30 +35,30 @@ export const App = () => {
   }, [genderSearch, pagination, search, statusSearch, searchSpecies]);
 
   return (
-    
     <div className="navbar__component">
-      <FiltersComponent
-      setSearchSpecies={setSearchSpecies}
-      setPagination={setPagination}
-      setSearchStatus={setSearchStatus}
-      setGenderSearch={setGenderSearch}
-      />
       <NavbarComponent />
-      <div className='searchbar__component'>
+      <div className="searchbar__component">
         <SearchBarComponent
           setPagination={setPagination}
           setSearch={setSearch}
         />
+        
       </div>
-      <div className='characters__component'>
-      <CharactersComponent characters = {caracters}/> 
+      <div className="characters__component">
+      <FiltersComponent
+          setSearchSpecies={setSearchSpecies}
+          setPagination={setPagination}
+          setSearchStatus={setSearchStatus}
+          setGenderSearch={setGenderSearch}
+        />
+        <CharactersComponent characters={caracters} />
       </div>
-      <div className='pagination__component'>
-      <PaginationComponent
-         pagination={pagination}
+      <div className="pagination__component">
+        <PaginationComponent
+          pagination={pagination}
           setPagination={setPagination}
           isNextPage={isNextPage}
-         />
+        />
       </div>
     </div>
   );
