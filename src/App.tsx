@@ -18,30 +18,34 @@ export const App = () => {
   const [caracters, setCaracters] = useState<Array<Caracter>>([]);
   const [isNextPage, setIsNextPage] = useState(false);
   const [search, setSearch] = useState('')
+  const [statusSearch, setSearchStatus] = useState('');
+  const [genderSearch, setGenderSearch] = useState('');
   
   useEffect(() => {
-    api.get <Results>(`?page=${pagination}&name=${search}`).then(({data}) => {
+    api.get <Results>(`?page=${pagination}&name=${search}&status=${statusSearch}&gender=${genderSearch}`).then(({data}) => {
       setCaracters(data?.results);
       console.log(data?.results)
 
       // Trata o retorno das páginas caso a page seja maior que a paginação irá esconder o button
       setIsNextPage(data?.info?.pages > pagination)
     });
-  }, [pagination, search]);
+  }, [pagination, search, statusSearch, genderSearch]);
 
   return (
-    <div className="bg-dark text-white">
+    <div className="navbar__component">
       <NavbarComponent />
-      <div className='next__page'>
+      <div className='searchbar__component'>
         <SearchBarComponent
           setPagination={setPagination}
           setSearch={setSearch}
         />
       </div>
-      <div className='container'>
-      <FiltersComponent/>
+      <div className='filters__component'>
+      <FiltersComponent
+      setSearchStatus={setSearchStatus}
+      />
       </div>
-      <div className='characters__page'>
+      <div className='characters__component'>
       <CharactersComponent characters = {caracters}/> 
       </div>
       <div className='pagination__component'>

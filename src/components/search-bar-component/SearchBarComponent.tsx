@@ -4,9 +4,9 @@ import "./Searchbar.css";
 const SearchBarComponent = ({ setSearch, setPagination }) => {
   return (
     <div className="container">
-        
       <form>
         <input
+        className="search__characters"
           type="text"
           placeholder="Buscar Personagens"
           onChange={(e) => {
@@ -14,7 +14,6 @@ const SearchBarComponent = ({ setSearch, setPagination }) => {
             setSearch(e.target.value)
           }}
         />
-        <button className="button__search">Search</button>
       </form>
     </div>
   );

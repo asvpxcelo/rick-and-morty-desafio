@@ -12,8 +12,9 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: #fff;
     color: #000;
+    margin: 15px;
+    border-radius: 5px;
 }
 
 .navbar__links {
