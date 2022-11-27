@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 // Services
@@ -10,12 +9,30 @@ import CharactersComponent from './components/characters-component/CharactersCom
 import PaginationComponent from './components/pagination-component/PaginationComponent';
 import SearchBarComponent from './components/search-bar-component/SearchBarComponent';
 import FiltersComponent from './components/filters-component/FiltersComponent';
+import EpisodesComponent from './components/episodes-component/EpisodesComponent';
+import LocationComponent from './components/location-component/LocationComponent';
 // Interfaces
 import { Caracter } from './interfaces/Caracters';
 import { Results } from './interfaces/Results';
 
+// Packages - Router
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+function App() {
+  return (
+    <Router>
+      <div className="app">
+      <NavbarComponent />
+      </div>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/episode' element={<EpisodesComponent/>}/>
+        <Route path='/location' element={<LocationComponent/>}/>
+      </Routes>
+    </Router>
+  )
+}
 
-export const App = () => {
+const Home = () => {
   const [pagination, setPagination] = useState<number>(1);
   const [caracters, setCaracters] = useState<Array<Caracter>>([]);
   const [isNextPage, setIsNextPage] = useState(false);
@@ -36,21 +53,21 @@ export const App = () => {
 
   return (
     <div className="navbar__component">
-      <NavbarComponent />
       <div className="searchbar__component">
         <SearchBarComponent
           setPagination={setPagination}
           setSearch={setSearch}
         />
-        
       </div>
       <div className="characters__component">
-      <FiltersComponent
+        <div>
+        <FiltersComponent
           setSearchSpecies={setSearchSpecies}
           setPagination={setPagination}
           setSearchStatus={setSearchStatus}
           setGenderSearch={setGenderSearch}
         />
+        </div>
         <CharactersComponent characters={caracters} />
       </div>
       <div className="pagination__component">
