@@ -1,7 +1,11 @@
 export interface Caracter {
-    gender: "Male" | "Female",
+    gender: "Male" | "Female" | "Unknow" | "Genderless",
     image: string,
     name: string,
-    species: "Human" | "Alien",
+    species: "Human" | "Alien" | "Unknow" | "Humanoid",
     status: string
+    location: {
+        name: string,
+        url: string
+    }
 }
