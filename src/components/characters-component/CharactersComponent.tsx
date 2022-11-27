@@ -1,11 +1,13 @@
 import React from "react";
 import { Caracter } from "../../interfaces/Caracters";
+import FiltersComponent from "../filters-component/FiltersComponent";
 import "./Characters.css";
 
 const CharactersComponent = (props: { characters: Array<Caracter> } ) => {
   return (
     <div className="container">
       <div className="characters__column">
+        <FiltersComponent/>
         {props?.characters.map((item, index) => {
           return (
             <div key={index} className="characters__images__info">

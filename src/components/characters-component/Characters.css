@@ -20,10 +20,9 @@
 
 .characters__images__info {
   justify-content: space-between;
-  color: #fff;
+  color: #000;
   border: 1px saddlebrown;
   margin: 10px;
-  background-color: #7D8F69;
   padding: 3px;
   text-align: center;
 }
@@ -33,6 +32,7 @@
   font-weight: bold;
   margin-bottom: 15px;
   background-color: #3F0071;
+  color: #fff;
   border: none;
   padding: 5px;
   margin: 4px;
@@ -47,6 +47,7 @@
   margin-top: 15px;
   font-size: 17px;
   background-color: #344D67;
+  color: #fff;
 }
 
 .characters__images__info img {
