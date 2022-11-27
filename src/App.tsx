@@ -11,6 +11,7 @@ import PaginationComponent from './components/pagination-component/PaginationCom
 import { Caracter } from './interfaces/Caracters';
 import { Results } from './interfaces/Results';
 import SearchBarComponent from './components/search-bar-component/SearchBarComponent';
+import FiltersComponent from './components/filters-component/FiltersComponent';
 
 export const App = () => {
   const [pagination, setPagination] = useState<number>(1);
@@ -21,6 +22,7 @@ export const App = () => {
   useEffect(() => {
     api.get <Results>(`?page=${pagination}&name=${search}`).then(({data}) => {
       setCaracters(data?.results);
+      console.log(data?.results)
 
       // Trata o retorno das páginas caso a page seja maior que a paginação irá esconder o button
       setIsNextPage(data?.info?.pages > pagination)
@@ -31,18 +33,23 @@ export const App = () => {
     <div className="bg-dark text-white">
       <NavbarComponent />
       <div className='next__page'>
-        {/* <SearchBarComponent
+        <SearchBarComponent
           setPagination={setPagination}
           setSearch={setSearch}
-        /> */}
-        <PaginationComponent
+        />
+      </div>
+      <div className='container'>
+      <FiltersComponent/>
+      </div>
+      <div className='characters__page'>
+      <CharactersComponent characters = {caracters}/> 
+      </div>
+      <div className='pagination__component'>
+      <PaginationComponent
          pagination={pagination}
           setPagination={setPagination}
           isNextPage={isNextPage}
          />
-      </div>
-      <div className='characters__page'>
-      <CharactersComponent characters = {caracters}/> 
       </div>
     </div>
   );

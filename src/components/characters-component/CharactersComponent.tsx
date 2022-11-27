@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Caracter } from "../../interfaces/Caracters";
 import "./Characters.css";
 
@@ -13,9 +13,9 @@ const CharactersComponent = (props: { characters: Array<Caracter> } ) => {
               <div className="characters__info">
                 <h5 className="characters__info__name">Name: {item?.name}</h5>
                 <h5 className="characters__status">Status: {item?.status}</h5>
-                <h5 className="">Espécie: {item?.species}</h5>
-                <h5 className="">Gênero: {item?.gender}</h5>
-                <h5 className="characters__location">Ultima Localização: {item?.location?.name}</h5>
+                <h5 className="characters_species">Species: {item?.species}</h5>
+                <h5 className="characters__gender">Gender:{item?.gender}</h5>
+                <h5 className="characters__location">Last Location: {item?.location?.name}</h5>
               </div>
             </div>
           );

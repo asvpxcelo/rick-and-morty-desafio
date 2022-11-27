@@ -20,13 +20,14 @@
 
 .characters__images__info {
   justify-content: space-between;
-  background-color: #905e96;
   color: #fff;
   border: 1px saddlebrown;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 10px;
+  margin: 10px;
+  background-color: #65647C;
+  padding: 3px;
+  text-align: center;
 }
+
 
 .characters__info__name {
   font-weight: bold;
@@ -45,4 +46,11 @@
 
 .characters__info {
   margin-top: 5px;
+}
+
+.characters__image {
+  margin-top: 5px;
+  width: 65%;
+  text-align: center;
+  border-radius: 25px;
 }

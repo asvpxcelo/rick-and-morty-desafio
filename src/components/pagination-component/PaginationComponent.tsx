@@ -14,8 +14,8 @@ const PaginationComponent: FC<PaginationComponentProps> = ({pagination, setPagin
 
   return (
     <div className="container">
-      { pagination !== 1 && <button className="" onClick={goToPreviusPage}> Previous Page</button> }
-      { isNextPage && <button className="" onClick={goToNextPage}>Next Page</button> }
+      { pagination !== 1 && <button className="button__previous__page" onClick={goToPreviusPage}> Previous Page</button> }
+      { isNextPage && <button className="button__next__page" onClick={goToNextPage}>Next Page</button> }
     </div>
   )
 };
