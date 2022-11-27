@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap";
 // Services
 import api from './services/api';
 // Components
 import NavbarComponent from './components/navbar-component/NavbarComponent';
 import CharactersComponent from './components/characters-component/CharactersComponent';
 import PaginationComponent from './components/pagination-component/PaginationComponent';
-
+import SearchBarComponent from './components/search-bar-component/SearchBarComponent';
 // Interfaces
 import { Caracter } from './interfaces/Caracters';
 import { Results } from './interfaces/Results';
-import SearchBarComponent from './components/search-bar-component/SearchBarComponent';
 import FiltersComponent from './components/filters-component/FiltersComponent';
 
 export const App = () => {
@@ -20,30 +21,33 @@ export const App = () => {
   const [search, setSearch] = useState('')
   const [statusSearch, setSearchStatus] = useState('');
   const [genderSearch, setGenderSearch] = useState('');
+  const [searchSpecies, setSearchSpecies] = useState('');
   
   useEffect(() => {
-    api.get <Results>(`?page=${pagination}&name=${search}&status=${statusSearch}&gender=${genderSearch}`).then(({data}) => {
+    // Retorna um GET na requisição da API com os filtros passados ou não
+    api.get <Results>(`?page=${pagination}&name=${search}&status=${statusSearch}&gender=${genderSearch}&species=${searchSpecies}`).then(({data}) => {
       setCaracters(data?.results);
-      console.log(data?.results)
 
       // Trata o retorno das páginas caso a page seja maior que a paginação irá esconder o button
       setIsNextPage(data?.info?.pages > pagination)
     });
-  }, [pagination, search, statusSearch, genderSearch]);
+  }, [genderSearch, pagination, search, statusSearch, searchSpecies]);
 
   return (
+    
     <div className="navbar__component">
+      <FiltersComponent
+      setSearchSpecies={setSearchSpecies}
+      setPagination={setPagination}
+      setSearchStatus={setSearchStatus}
+      setGenderSearch={setGenderSearch}
+      />
       <NavbarComponent />
       <div className='searchbar__component'>
         <SearchBarComponent
           setPagination={setPagination}
           setSearch={setSearch}
         />
-      </div>
-      <div className='filters__component'>
-      <FiltersComponent
-      setSearchStatus={setSearchStatus}
-      />
       </div>
       <div className='characters__component'>
       <CharactersComponent characters = {caracters}/> 

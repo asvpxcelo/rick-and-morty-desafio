@@ -1,6 +1,6 @@
 import FilterButtonComponent from "../filter-button-component/FilterButtonComponent";
 
-const SpeciesComponent = () => {
+const SpeciesComponent = ({setPagination, setSearchSpecies}) => {
   const species = [
     "Human",
     "Alien",
@@ -37,6 +37,8 @@ const SpeciesComponent = () => {
         <div className="accordion-body">
           {species.map((item, index) => (
             <FilterButtonComponent
+            task={setSearchSpecies}
+            setPagination={setPagination}
               index={index}
               name='Species'
               items={item}

@@ -1,6 +1,6 @@
 import FilterButtonComponent from "../filter-button-component/FilterButtonComponent";
 
-const GenderComponent = () => {
+const GenderComponent = ({setPagination, setGenderSearch}) => {
   const genders = ["Male", "Female", "Unknow", "Genderless"]
   return (
     <div>
@@ -14,10 +14,13 @@ const GenderComponent = () => {
       <div className="accordion-body">
         {genders.map((items, index) =>
         <FilterButtonComponent
+        setPagination={setPagination}
         key={index}
+        name="gender"
         index={index}
-        name='gender'
-        items={items} />
+        items={items}
+        task={setGenderSearch}
+         />
         )}
       </div>
     </div>
