@@ -4,7 +4,6 @@ import "./Pagination.css";
 
 
 const PaginationComponent: FC<PaginationComponentProps> = ({pagination, setPagination, isNextPage}) => {
-  console.log(pagination);
   const goToNextPage = () => {
     setPagination(pagination + 1);
   }
