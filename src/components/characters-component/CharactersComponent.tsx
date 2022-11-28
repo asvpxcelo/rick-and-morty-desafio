@@ -13,9 +13,9 @@ const CharactersComponent = (props: { characters: Array<Caracter> } ) => {
               <div className="characters__info">
                 <h5 className="characters__info__name">{item?.name}</h5>
                 <h5 className="characters__info__origin">First seen in: {item?.origin?.name}</h5>
-                <h5 className="characters__status">{item?.status}</h5>
-                <h5 className="characters_species">{item?.species}</h5>
-                <h5 className="characters__gender">{item?.gender}</h5>
+                <h5 className="characters__status">Status: {item?.status}</h5>
+                <h5 className="characters_species">Specie: {item?.species}</h5>
+                <h5 className="characters__gender">Gender: {item?.gender}</h5>
                 <h5 className="characters__location">Last Location: {item?.location?.name}</h5>
               </div>
             </div>

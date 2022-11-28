@@ -1,6 +1,20 @@
 .input {
   width: 40%;
-  border: 2px solid #0b5ed7;
+  border: 2px solid #AA8B56;
   border-radius: 8px;
   padding: 10px 15px;
+}
+
+.btn_searchbar {
+  background-color: #AA8B56;
+  border: 5px;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+@media (max-width: 227px) {
+  .input {
+    width: 80%;
+  }
 }

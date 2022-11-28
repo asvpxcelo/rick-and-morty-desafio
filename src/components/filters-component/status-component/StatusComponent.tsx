@@ -4,7 +4,6 @@ const StatusComponent = ({ setPagination, setSearchStatus }) => {
   const status = ["Alive", "Dead", "Unknow"];
   return (
     <div>
-      <div className="accordion" id="accordionExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
             <button
@@ -24,7 +23,7 @@ const StatusComponent = ({ setPagination, setSearchStatus }) => {
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div className="accordion-body">
+            <div className="accordion-body d-flex flex-wrap gap-3">
               {status.map((items, index) => (
                 <FilterButtonComponent
                   task={setSearchStatus}
@@ -38,7 +37,6 @@ const StatusComponent = ({ setPagination, setSearchStatus }) => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const SearchBarComponent = ({ setSearch, setPagination }) => {
     e.preventDefault();
   })
   return (
-    <form className="d-flex flex-sm-row flex-column align-items-center justify-content-center gap-4 mb-5 mt-5">
+    <form className="d-flex flex-sm-row flex-column align-items-center justify-content-center gap-4 mb-5">
       <input className="input"
       type="text"
             placeholder="Buscar Personagens"
@@ -18,7 +18,7 @@ const SearchBarComponent = ({ setSearch, setPagination }) => {
       </input>
       <button
       onClick={searchCharacter}
-      className="btn btn-primary fs-5">Pesquisar</button>
+      className="btn_searchbar btn-primary fs-5">Pesquisar</button>
     </form>
   );
 };

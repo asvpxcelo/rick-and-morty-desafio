@@ -2,7 +2,6 @@ import React from "react";
 import "./Navbar.css";
 import {NavLink, Link } from 'react-router-dom'
 
-
 const NavbarComponent = () => {
   return (
     <header>
