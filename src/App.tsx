@@ -25,8 +25,6 @@ function App() {
       </div>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/episode' element={<EpisodesComponent/>}/>
-        <Route path='/location' element={<LocationComponent/>}/>
       </Routes>
     </Router>
   )
@@ -59,6 +57,13 @@ const Home = () => {
           setSearch={setSearch}
         />
       </div>
+      <div className="pagination__component">
+        <PaginationComponent
+          pagination={pagination}
+          setPagination={setPagination}
+          isNextPage={isNextPage}
+        />
+      </div>
       <div className="container">
         <div className='row'>
         <FiltersComponent
@@ -73,13 +78,6 @@ const Home = () => {
           </div>
         </div>
         </div>
-      </div>
-      <div className="pagination__component">
-        <PaginationComponent
-          pagination={pagination}
-          setPagination={setPagination}
-          isNextPage={isNextPage}
-        />
       </div>
     </div>
   );

@@ -8,19 +8,8 @@ const NavbarComponent = () => {
     <header>
       <div className="navbar__list">
       <Link to="/" className="fs-3 ubuntu navbar-brand">
-          Rick And Morty - SESA
+          Rick And Morty - SESATECH
          </Link>
-        <div className="navbar__links">
-         <Link to="/episode" className="fs-3 ubuntu navbar-brand">
-          Episodes
-         </Link>
-         <Link to="/location" className="fs-3 ubuntu navbar-brand">
-          Location
-         </Link>
-         <Link to="/" className="fs-3 ubuntu navbar-brand">
-          Characters
-         </Link>
-        </div>
       </div>
     </header>
   );
