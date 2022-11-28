@@ -10,7 +10,7 @@ const FiltersComponent = ({setSearchStatus, setPagination, setGenderSearch, setS
     setSearchSpecies('')
   }
   return (
-    <div className="col-3">
+    <div className="col-4">
       <div className="text-center fw-bold fs-4 mb-4">Filter</div>
       <div style={{cursor: 'pointer'}}  className="text-center text-primary text-decoration-underline" onClick={clearFilters}>
         Clear Filters
