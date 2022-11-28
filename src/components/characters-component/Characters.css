@@ -46,15 +46,16 @@
   font-weight: bold;
   margin-top: 15px;
   font-size: 17px;
-  background-color: #344D67;
   color: #fff;
 }
 
 .characters__images__info img {
   border-radius: 15px;
+  width: 275px;
 }
 
 .characters__info {
+  flex-direction: column;
   margin-top: 5px;
 }
 
@@ -62,5 +63,5 @@
   margin-top: 5px;
   width: 65%;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 50%
 }

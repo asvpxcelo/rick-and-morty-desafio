@@ -1,20 +1,8 @@
-import { FilterButton } from "../../../interfaces/FilterButton";
-
+import './FilterButton.css';
 
 const FilterButtonComponent = ({index, name, items, setPagination, task}) => {
   return (
     <div>
-      <style jsx>
-        {`
-          .x:checked + label {
-            background-color: #0b5ed7;
-            color: white;
-          }
-          input[type="radio"] {
-            display: none;
-          }
-        `}
-      </style>
       <div className="form-check">
         <input
         onClick={() => {

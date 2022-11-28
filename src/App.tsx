@@ -52,23 +52,27 @@ const Home = () => {
   }, [genderSearch, pagination, search, statusSearch, searchSpecies]);
 
   return (
-    <div className="navbar__component">
+    <div className="App">
       <div className="searchbar__component">
         <SearchBarComponent
           setPagination={setPagination}
           setSearch={setSearch}
         />
       </div>
-      <div className="characters__component">
-        <div>
+      <div className="container">
+        <div className='row'>
         <FiltersComponent
           setSearchSpecies={setSearchSpecies}
           setPagination={setPagination}
           setSearchStatus={setSearchStatus}
           setGenderSearch={setGenderSearch}
         />
+        <div className="col-lg-8 col-12">
+          <div className='row'>
+          <CharactersComponent characters={caracters} />
+          </div>
         </div>
-        <CharactersComponent characters={caracters} />
+        </div>
       </div>
       <div className="pagination__component">
         <PaginationComponent

@@ -1,0 +1,7 @@
+input[type="radio"] {
+    display: none;
+}
+
+.form-check-input {
+    background-color: lightyellow;
+}
