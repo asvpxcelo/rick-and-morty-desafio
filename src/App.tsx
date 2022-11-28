@@ -9,8 +9,6 @@ import CharactersComponent from './components/characters-component/CharactersCom
 import PaginationComponent from './components/pagination-component/PaginationComponent';
 import SearchBarComponent from './components/search-bar-component/SearchBarComponent';
 import FiltersComponent from './components/filters-component/FiltersComponent';
-import EpisodesComponent from './components/episodes-component/EpisodesComponent';
-import LocationComponent from './components/location-component/LocationComponent';
 // Interfaces
 import { Caracter } from './interfaces/Caracters';
 import { Results } from './interfaces/Results';
