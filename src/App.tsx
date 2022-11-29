@@ -46,7 +46,7 @@ const Home = () => {
       setIsNextPage(data?.info?.pages > pagination)
     }).catch((error) => {
       if(error.response) {
-        alert('Não há dados disponíveis para essa requisição')
+        alert('Não há dados disponíveis para essa busca')
       }
     })
   }, [genderSearch, pagination, search, statusSearch, searchSpecies]);
