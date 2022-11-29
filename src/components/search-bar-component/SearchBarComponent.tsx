@@ -3,7 +3,6 @@ import "./Searchbar.css";
 
 /**
  * @Marcelo Soares 
- * 
  * SearchBarComponent - Componente para buscar personagens pelo nome
  * Props: setSearch, setPagination
  */

@@ -2,6 +2,11 @@ import React from "react";
 import { Caracter } from "../../interfaces/Caracters";
 import "./Characters.css";
 
+/**
+ * Componente Pai contendo informações dos personagens
+ * @param props character
+ */
+
 const CharactersComponent = (props: { characters: Array<Caracter> } ) => {
   return (
     <div className="container">
