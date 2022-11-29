@@ -1,11 +1,11 @@
+import { GenderComponentProps } from "../../../interfaces/Gender";
 import FilterButtonComponent from "../filter-button-component/FilterButtonComponent";
-
 /**
  * Componente que renderiza informações sobre Generos(Male, Female, Unknow, Genderless)
  * Recebe o componente pai FilterButton Componente e também
  * Recebe as props de paginação para preservar o filtro de página e de busca do Gênero
  */
-const GenderComponent = ({ setPagination, setGenderSearch }) => {
+const GenderComponent = ({ setPagination, setGenderSearch }: GenderComponentProps) => {
   const genders = ["Male", "Female", "Unknow", "Genderless"];
   return (
     <div>

@@ -1,9 +1,17 @@
 import React from "react";
 import "./Searchbar.css";
 
+/**
+ * @Marcelo Soares 
+ * 
+ * SearchBarComponent - Componente para buscar personagens pelo nome
+ * Props: setSearch, setPagination
+ */
+
 const SearchBarComponent = ({ setSearch, setPagination }) => {
 
   const searchCharacter = ((e) => {
+    console.log('ue');
     e.preventDefault();
   })
   return (

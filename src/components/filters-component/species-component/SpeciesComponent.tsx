@@ -1,11 +1,11 @@
+import { SpeciesComponentProps } from "../../../interfaces/Species";
 import FilterButtonComponent from "../filter-button-component/FilterButtonComponent";
-
 /**
  * Componente que renderiza informações sobre Generos(Human, Alien, Humanoid, Poopybutthole, Mythological, Unknown, Animal, Disease, Robot, Cronenberg, Planet)
  * Recebe o componente pai FilterButton Componente e também
  * Recebe as props de paginação para preservar o filtro de página e de busca do Gênero
  */
-const SpeciesComponent = ({setPagination, setSearchSpecies}) => {
+const SpeciesComponent = ({setPagination, setSearchSpecies}: SpeciesComponentProps) => {
   const species = [
     "Human",
     "Alien",

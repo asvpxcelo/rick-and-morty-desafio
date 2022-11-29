@@ -1,11 +1,11 @@
+import { StatusComponentProps } from "../../../interfaces/Status";
 import FilterButtonComponent from "../filter-button-component/FilterButtonComponent";
-
 /**
  * Componente de Status que retorna informações como (Alive, Dead e Unknow)
  * Recebe o componente pai FilterButton Componente e também
  * Recebe as props de paginação para preservar o filtro de página e de busca do Status
  */
-const StatusComponent = ({ setPagination, setSearchStatus }) => {
+const StatusComponent = ({ setPagination, setSearchStatus }: StatusComponentProps) => {
   const status = ["Alive", "Dead", "Unknow"];
   return (
     <div>
