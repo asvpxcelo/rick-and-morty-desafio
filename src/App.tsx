@@ -45,7 +45,9 @@ const Home = () => {
       // Trata o retorno das páginas caso a page seja maior que a paginação irá esconder o button
       setIsNextPage(data?.info?.pages > pagination)
     }).catch((error) => {
-      alert(error)
+      if(error.response) {
+        alert('Não há dados disponíveis para essa requisição')
+      }
     })
   }, [genderSearch, pagination, search, statusSearch, searchSpecies]);
 
