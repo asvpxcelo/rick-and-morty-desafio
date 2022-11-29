@@ -2,12 +2,19 @@ import GenderComponent from "./gender-component/GenderComponent";
 import SpeciesComponent from "./species-component/SpeciesComponent";
 import StatusComponent from "./status-component/StatusComponent";
 
+/**
+ * Componente pai que Recebe os filhos: Status/Species e Gender
+ * Renderizando os três dentro de si com as props: setSearchStatus, setPagination, setGenderSearch, setSearchSpecies
+ */
 const FiltersComponent = ({setSearchStatus, setPagination, setGenderSearch, setSearchSpecies}) => {
+
+  // Function para limpar filtros da tela
   const clearFilters = () => {
     setSearchStatus('')
     setPagination('')
     setGenderSearch('')
     setSearchSpecies('')
+    window.location.reload();
   }
   return (
     <div className="col-lg-3 col-12 mb-5">

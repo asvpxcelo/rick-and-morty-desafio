@@ -1,5 +1,10 @@
 import FilterButtonComponent from "../filter-button-component/FilterButtonComponent";
 
+/**
+ * Componente de Status que retorna informações como (Alive, Dead e Unknow)
+ * Recebe o componente pai FilterButton Componente e também
+ * Recebe as props de paginação para preservar o filtro de página e de busca do Status
+ */
 const StatusComponent = ({ setPagination, setSearchStatus }) => {
   const status = ["Alive", "Dead", "Unknow"];
   return (
@@ -11,7 +16,7 @@ const StatusComponent = ({ setPagination, setSearchStatus }) => {
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
-              aria-expanded="false"
+              aria-expanded="true"
               aria-controls="collapseOne"
             >
               Status
